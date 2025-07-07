@@ -1,0 +1,120 @@
+:root{
+    --main-body-color:hsl(0, 0%, 100%);
+    --Supervisor-box-color:hsl(180, 62%, 55%);
+    --TeamBulider-box-color:hsl(0, 78%, 62%);
+    --Calcultor-box-color:hsl(212, 86%, 64%);
+    --Karma-box-color:hsl(34, 97%, 64%);
+}
+
+body {
+    background-color: var(--main-body-color);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-top: clamp(1rem, 12.8vw, 3rem);
+    margin-bottom: clamp(1.5rem, 12.8vw, 3rem);
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem; /* to avoid edge overflow on small screens */
+    box-sizing: border-box;
+    height: auto;
+}
+
+.text{
+    max-width:35rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text p:first-child {
+    font-size: clamp(0.3rem, 6.4vw, 2rem);
+    margin: 0;
+}
+
+.text p:nth-child(2) {
+    font-size: clamp(0.3rem, 6.4vw, 2rem);
+    margin: 0;
+}
+
+.text p:nth-child(3) {
+    font-size: clamp(0.5rem, 4.3vw, 1rem);   /* 1rem=16px    16/375 * 100 = 4.26vw*/
+    color: hsl(0, 0%, 50%);
+}
+
+.Container{
+    display: grid;
+    gap:2rem;
+    justify-items: center;
+    margin-top: clamp(1.5rem, 12.8vw, 3rem);
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 6px 20px 0px rgba(41, 39, 39, 0.2);
+    height: clamp(6rem, 66vw, 16rem);
+    width: clamp(7rem, 85vw, 20rem);
+    border-radius: clamp(0.25rem, 1.5vw, 0.3rem);
+    box-sizing: border-box;
+    padding: clamp(0.3rem, 6.4vw, 1.5rem);
+}
+
+.box h3{
+    font-size: clamp(0.6rem, 5.3vw, 1.3rem);
+    margin: 0;
+}
+
+.box p{
+    font-size: clamp(0.35rem, 3.8vw, 0.9rem);
+    margin: 0.2rem;
+}
+
+.box img {
+    width: clamp(0.8rem, 17vw, 4rem);
+    align-self: flex-end;          /* pushes image to right side */
+    margin-top: clamp(0.6rem, 9.3vw, 2.5rem); /* spacing from text above */
+}
+
+
+.Supervisor{
+    border-top: solid 0.25rem var(--Supervisor-box-color);
+}
+
+.TeamBulider{
+    border-top: solid 0.25rem var(--TeamBulider-box-color);
+}
+
+.Karma{
+    border-top: solid 0.25rem var(--Karma-box-color);
+}
+
+.Calcultor{
+    border-top: solid 0.25rem var(--Calcultor-box-color);
+}
+
+@media(min-width:66rem){
+ .Container{
+    grid-template-columns: 20rem 20rem 20rem;
+    grid-template-rows: 7rem 7rem 7rem 7rem;
+ }   
+
+ .TeamBulider{
+    grid-column: 2/3;
+    grid-row: 1/3;
+ }
+
+ .Supervisor{
+    grid-row: 2/4;
+    grid-column: 1/2;
+ }
+
+ .Calcultor{
+    grid-row: 2/3;
+    grid-column: 3/4;
+ }
+
+ .Karma{
+    grid-row: 3/5;
+    grid-column: 2/3;
+ }
+}
